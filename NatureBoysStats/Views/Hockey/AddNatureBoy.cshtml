@@ -1,0 +1,83 @@
+﻿@model NatureBoysStats.Models.NatureBoys
+
+@{
+    ViewData["Title"] = "AddNatureBoy";
+}
+
+<h1>AddNatureBoy</h1>
+
+<h4>NatureBoys</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddNatureBoy">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label">Jersey Number</label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Goals" class="control-label"></label>
+                <input asp-for="Goals" class="form-control" />
+                <span asp-validation-for="Goals" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assist" class="control-label"></label>
+                <input asp-for="Assist" class="form-control" />
+                <span asp-validation-for="Assist" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Points" class="control-label"></label>
+                <input asp-for="Points" class="form-control" />
+                <span asp-validation-for="Points" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PenaltyMinutes" class="control-label"></label>
+                <input asp-for="PenaltyMinutes" class="form-control" />
+                <span asp-validation-for="PenaltyMinutes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BeersBefore" class="control-label"></label>
+                <input asp-for="BeersBefore" class="form-control" />
+                <span asp-validation-for="BeersBefore" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BeersDuring" class="control-label"></label>
+                <input asp-for="BeersDuring" class="form-control" />
+                <span asp-validation-for="BeersDuring" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BeersAfter" class="control-label"></label>
+                <input asp-for="BeersAfter" class="form-control" />
+                <span asp-validation-for="BeersAfter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NickName" class="control-label"></label>
+                <input asp-for="NickName" class="form-control" />
+                <span asp-validation-for="NickName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

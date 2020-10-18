@@ -1,0 +1,98 @@
+﻿@model IEnumerable<NatureBoysStats.Models.NatureBoys>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Player List</h1>
+
+<p>
+    <a asp-action="AddNatureBoy">Create A NatureBoy. Wooooooooo</a>
+</p>
+    <table class="table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Jersey Number
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Goals)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Assist)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Points)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PenaltyMinutes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BeersBefore)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BeersDuring)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BeersAfter)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NickName)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Goals)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Assist)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Points)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PenaltyMinutes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BeersBefore)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BeersDuring)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BeersAfter)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NickName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "UpdateNatureBoy", "Hockey", item)
+
+                        @*<a asp-action="UpdateNatureBoy" asp-route-id="@item.Id">Edit</a> |*@
+                        @*<a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
+                       @* <a asp-action="DeleteNatureBoy" asp-route-id="@item.Id">Delete</a>*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

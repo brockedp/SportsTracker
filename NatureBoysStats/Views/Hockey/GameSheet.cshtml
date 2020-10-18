@@ -1,0 +1,121 @@
+﻿@*@model NatureBoysStats.Models.NatureBoys*@
+@model IList<NatureBoysStats.Models.NatureBoys>
+
+    @{
+        ViewData["Title"] = "GameSheet";
+    }
+
+    <h1>GameSheet</h1>
+    <div class="teamTable">
+        <form action="/Hockey/EditGameSheets" method="post">
+            <table style="width:25px">
+                <tr>
+                    <th>Number</th>
+                    <th>Nick Name</th>
+                    <th align="center">Goals</th>
+                    <th>Assists</th>
+                    <th>Penalty Minutes</th>
+                    <th>Beers Before</th>
+                    <th>Beers During</th>
+                    <th>Beers After</th>
+                    @*<th>Update Player</th>*@
+                </tr>
+                @for(int i = 0; i <  Model.Count; i++)
+                {
+            <tr>
+                <td> @Html.TextBoxFor(x=> Model[i].Id, new { @class = "form-control", @readOnly="readOnly" })</td>
+                <td> @Html.TextBoxFor(x=> Model[i].NickName, new { @class="wide", @readOnly="readOnly" })</td>
+                @*<td><p size="20">@Model[i].NickName</p></td>*@
+                @*<td><input style="width:inherit" /></td>*@
+                @*  <td><input type="text" name="@Model[i].Goals" size="2" /></td>*@
+                <td>@Html.TextBoxFor(x => Model[i].Goals, new {style="width:50px"})</td>
+                <td>@Html.TextBoxFor(x => Model[i].Assist, new { style = "width:50px" })</td>
+                <td>@Html.TextBoxFor(x => Model[i].PenaltyMinutes, new { style = "width:50px" })</td>
+                <td>@Html.TextBoxFor(x => Model[i].BeersBefore, new { style = "width:50px" })</td>
+                <td>@Html.TextBoxFor(x => Model[i].BeersDuring, new { style = "width:50px" })</td>
+                <td>@Html.TextBoxFor(x => Model[i].BeersAfter, new { style = "width:50px" })</td>
+                @*<td>@Html.TextBoxFor(x => Model[i].BeersAfter, new { @value = "0" })</td>*@
+                @*<td>@Html.TextBoxFor(x => Model[i].BeersAfter, new { @class = "form-control" })</td>*@
+                @*<td><input type="text" name="@Model[i].Assist" size="2" /></td>
+        <td><input type="text" name="@Model[i].PenaltyMinutes" size="2" /></td>
+        <td><input type="text" name="@Model[i].BeersBefore" size="2" /></td>
+        <td><input type="text" name="@Model[i].BeersDuring" size="2" /></td>
+        <td><input type="text" name="@Model[i].BeersAfter" size="2" /></td>*@
+                @*<td><input type="submit" value="Update Player" class="btn-block" /></td>*@
+            </tr>
+
+                }
+            </table>
+            <input type="submit" value="Submit GameSheet" />
+        </form>
+    </div>
+    @*<div>
+            <h4>NatureBoys</h4>
+            <hr />
+            <dl class="table-active">
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Goals)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Goals)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Assist)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Assist)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.Points)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.Points)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.PenaltyMinutes)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.PenaltyMinutes)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.BeersBefore)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.BeersBefore)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.BeersDuring)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.BeersDuring)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.BeersAfter)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.BeersAfter)
+                </dd>
+                <dt class = "col-sm-2">
+                    @Html.DisplayNameFor(model => model.NickName)
+                </dt>
+                <dd class = "col-sm-10">
+                    @Html.DisplayFor(model => model.NickName)
+                </dd>
+            </dl>
+        </div>*@
+    <div>
+        @*  <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |*@
+        <a asp-action="Index">Back to List</a>
+    </div>

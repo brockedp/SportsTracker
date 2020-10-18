@@ -1,0 +1,31 @@
+﻿@model NatureBoysStats.Models.Club
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@
+<iframe width="560" height="315" src="https://www.youtube.com/embed/joRfN6jjknU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen align="middle"></iframe>
+<div class="text-capitalize">
+   @* <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/album/ooh-la-la-feat-greg-nice-dj-premier/1517683927?i=1517683935"></iframe>*@
+    <div style="border:groove; align-content:center">
+        <h3 >Pregame Tunes</h3>
+        <audio controls style="background-color:green" autoplay>
+            <source src="/02 ooh la la (feat. Greg Nice & DJ P.mp3" type="audio/mp3" />
+            <source src="/01 This Is America.mp3" type="audio/mp3" />
+            
+        </audio>
+    </div>
+    <h1>Game Schedule</h1>
+    <a href="https://msehockey.com/schedules/schedules.cfm">Game Times</a>
+    <br />
+    <h2>The Detroit Red Wings</h2>
+    <p>@Model.teams[5].strDescriptionEN</p>
+    <img src="@Model.teams[5].strTeamJersey" />
+    <br />
+    <img src="@Model.teams[5].strTeamLogo" />
+    <br />
+    <a href="@Model.teams[5].strWebsite">Check Out the Wings</a>
+</div>

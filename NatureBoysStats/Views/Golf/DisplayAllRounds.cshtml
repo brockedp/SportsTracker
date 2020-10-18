@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewData["Title"] = "AllRounds";
+}
+@model IEnumerable<NatureBoysStats.Models.GolfScoreCard>
+    <style>
+        .putting-green {
+            /*            background-color: green;*/
+            background: repeating-linear-gradient( 0deg, lightgreen 0px, lawngreen 0px, green 40px, darkgreen 2px );
+            border-radius: 90%;
+            position: fixed;
+            padding: 50px 50px 60px 60px;
+            margin: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            box-shadow: 10px 20px 20px 0px darkgreen;
+        }
+        #cup {
+            background-color: black;
+            position: fixed;
+            border-radius: 30%;
+            height: 20px;
+            width: 20px;
+            left: 70%;
+            top: 65%;
+        }
+        #golf-ball {
+            background-color:white;
+            position:fixed;
+            border-radius:50%;
+            height:10px;
+            width:10px;
+            top: 300px;
+            left:50px;
+            animation-name:rolling;
+            animation-duration:5s;
+            animation-iteration-count:infinite;
+            
+        }
+        @@keyframes rolling{
+            75% {
+                left: 80%;
+                top: 65%;
+                animation-timing-function: ease-out;
+            }
+            100%{
+                left:70%;
+                top:65%;
+               animation-timing-function:ease-out;
+            }
+        }
+    </style>
+
+    <div class="putting-green" >
+        <div id="cup"></div>
+        <div id="golf-ball"></div>
+    </div>
+    <div>
+        <table class="table-bordered" style="background-color:cornflowerblue">
+            <tr style="color:black">
+                <th style="width:200px">Course Name</th>
+                <th style="width:100px">Player</th>
+                <th style="width:100px">Hole 1</th>
+                <th style="width:100px">Hole 2</th>
+                <th style="width:100px">Hole 3</th>
+                <th style="width:100px">Hole 4</th>
+                <th style="width:100px">Hole 5</th>
+                <th style="width:100px">Hole 6</th>
+                <th style="width:100px">Hole 7</th>
+                <th style="width:100px">Hole 8</th>
+                <th style="width:100px">Hole 9</th>
+                <th style="width:100px">Hole 10</th>
+                <th style="width:100px">Hole 11</th>
+                <th style="width:100px">Hole 12</th>
+                <th style="width:100px">Hole 13</th>
+                <th style="width:100px">Hole 14</th>
+                <th style="width:100px">Hole 15</th>
+                <th style="width:100px">Hole 16</th>
+                <th style="width:100px">Hole 17</th>
+                <th style="width:100px">Hole 18</th>
+                <th style="width:100px">Round Score</th>
+                <th style="width:100px">Date</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr style="color:aliceblue">
+                    <td>@item.CourseName</td>
+                    <td>@item.PlayerName</td>
+                    <td>@item.Hole1</td>
+                    <td>@item.Hole2</td>
+                    <td>@item.Hole3</td>
+                    <td>@item.Hole4</td>
+                    <td>@item.Hole5</td>
+                    <td>@item.Hole6</td>
+                    <td>@item.Hole7</td>
+                    <td>@item.Hole8</td>
+                    <td>@item.Hole9</td>
+                    <td>@item.Hole10</td>
+                    <td>@item.Hole11</td>
+                    <td>@item.Hole12</td>
+                    <td>@item.Hole13</td>
+                    <td>@item.Hole14</td>
+                    <td>@item.Hole15</td>
+                    <td>@item.Hole16</td>
+                    <td>@item.Hole17</td>
+                    <td>@item.Hole18</td>
+                    <td>@item.Total</td>
+                    <td>@item.Date</td>
+                </tr>
+            }
+        </table>
+        @*<a asp-action="CreateNewScoreCard"></a>*@
+        
+        @Html.ActionLink("Log New Score", "Index", "Golf")
+        
+    </div>
