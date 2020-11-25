@@ -30,8 +30,9 @@ namespace NatureBoysStats.Controllers
 
         public IActionResult Index()
         {
-            var theTeams = GetTeam().Result;
+           var theTeams = GetTeam().Result;
             return View(theTeams);
+            //return View();
         }
 
         public IActionResult Privacy()
